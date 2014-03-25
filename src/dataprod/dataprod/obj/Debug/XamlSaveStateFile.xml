@@ -1,5 +1,7 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
     <LocalAssembly PathName="c:\data\hacks2\src\dataprod\dataprod\obj\debug\intermediatexaml\dataprod.exe" HashGuid="ee6b4701-c266-400e-c868-d2fd66d80320" />
+    <ReferenceAssembly PathName="c:\data\hacks2\src\dataprod\packages\newtonsoft.json.6.0.1\lib\netcore45\newtonsoft.json.dll" HashGuid="09c236d1-053d-8905-8ef0-17027540c930" />
+    <ReferenceAssembly PathName="c:\data\hacks2\src\dataprod\packages\winrtxamltoolkit.1.5.4.3\lib\netcore451\winrtxamltoolkit.dll" HashGuid="5e9cdb98-d894-297f-abde-39796d45dfee" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>
