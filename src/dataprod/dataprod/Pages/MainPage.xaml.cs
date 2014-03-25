@@ -38,7 +38,7 @@ namespace dataprod
 		private void UserPrompt_OnKeyDown(object sender, KeyRoutedEventArgs e)
 		{
 
-			//OPERATOR DATA <AS> <GRAPH> <FOR> <JOB/SOC>
+			//OPERATOR, DATA, <AS>, <GRAPH>, <FOR>, <JOB/SOC>, <BETWEEN>
 			if (e.Key == VirtualKey.Enter)
 			{
 				var dataBuilder = new List<testDataTemplate>();
@@ -47,7 +47,8 @@ namespace dataprod
 				//data
 				switch (commands[1])
 				{
-					case "current employment":
+					case "employment":
+						var y = dataGrabber.LMI.wfpredict("1212", "2011", "2012");
 						break;
 
 					case "testdata":
@@ -80,8 +81,6 @@ namespace dataprod
 						dataBuilder = testData;
 						break;
 				}
-
-				//operator
 				switch (commands[0])
 				{
 					case "show":
