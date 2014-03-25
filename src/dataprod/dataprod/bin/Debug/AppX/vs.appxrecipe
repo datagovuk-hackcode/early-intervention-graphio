@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>ZEPHYR</Machine>
+    <WindowsUser>Kaelan</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>13c3cd6c-78d3-4b8f-8bfc-71811bd34ccf</PackageIdentityName>
+    <RegisteredManifestChecksum>3EC7243890E0E164E3A7B15CF6F4CBDB3E5A550176BC30389C57DD38845ADA28</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>13c3cd6c-78d3-4b8f-8bfc-71811bd34ccf_1.0.0.0_neutral__v12sgy5srznny</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>13c3cd6c-78d3-4b8f-8bfc-71811bd34ccf_v12sgy5srznny!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>13c3cd6c-78d3-4b8f-8bfc-71811bd34ccf</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Kaelan</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-25T10:41:34.223</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\dataprod.exe">
+      <PackagePath>dataprod.exe</PackagePath>
+      <Modified>2014-03-25T10:43:33.020</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T14:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T14:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T14:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T14:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2014-03-25T10:41:33.608</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\Pages\MainPage.xbf">
+      <PackagePath>Pages\MainPage.xbf</PackagePath>
+      <Modified>2014-03-25T10:43:32.833</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-03-25T10:41:34.025</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
