@@ -135,6 +135,17 @@ namespace dataprod
 						var loc = new Location(53.136954, -1.392331);
 						BINGIT.SetView(loc, 7.00);
 
+						var pushpin = new Pushpin()
+						{
+							Text = "pins yo'"
+						};
+						MapLayer.SetPosition(pushpin, new Location
+						{
+							
+						});
+						BINGIT.Children.Add(pushpin);
+
+
 						Debug.WriteLine(await dataGrabber.LMI.essRegionJason(1, "2136"));
 						break;
 
