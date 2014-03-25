@@ -142,7 +142,7 @@
 		</StackPanel>
 
 		<Grid Grid.Column="1" Grid.Row="2" x:Name="dynGrid">
-			<Charting:Chart x:Name="MainChart1" >
+			<Charting:Chart x:Name="MainChart1" Margin="1280,0,-1280,0" >
 			<Charting:AreaSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
 			<Charting:BarSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
 			<Charting:BubbleSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
@@ -152,7 +152,7 @@
 			<Charting:ScatterSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
 			</Charting:Chart>
 		</Grid>
-		<Grid Grid.Column="1" Grid.Row="2" x:Name="mappletGrid">
+		<Grid Grid.Column="1" Grid.Row="2" x:Name="mappletGrid" Visibility="Collapsed">
 			<Grid.ColumnDefinitions>
 				
 			</Grid.ColumnDefinitions>
@@ -165,7 +165,7 @@
 				
 			</Grid>
 			
-			<TextBlock x:Name="TextBlockLower" Grid.Row="1"/>
+			<TextBlock x:Name="TextBlockLower" Grid.Row="2" Foreground="White"/>
 		</Grid>
 
 	</Grid>

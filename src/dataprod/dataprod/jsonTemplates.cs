@@ -28,6 +28,20 @@ namespace dataprod
 			public string qualifications { get; set; }
 		}
 
+		public class essRegion
+		{
+			public double percentSSV { get; set; }
+			public double percentHTF { get; set; }
+			public int soc { get; set; }
+			public double percentHTFisSSV { get; set; }
+			public int reliability { get; set; }
+			public Region region { get; set; }
+			public class Region
+			{
+				public string name { get; set; }
+				public int code { get; set; }
+			}
+		}
 		public class wffilterpredict
 		{
 			public int soc { get; set; }

@@ -37,6 +37,21 @@ namespace dataprod
 				var z = JsonConvert.DeserializeObject<List<jsonTemplates.socSearch>>(y);
 				return z;
 			}
+
+			public async static Task<jsonTemplates.essRegion> essRegion(int regionNumber, string soc)
+			{
+				var url = "http://api.lmiforall.org.uk/api/v1/ess/region/" + regionNumber + "/" + soc;
+				var y = await HttpGet(url);
+				var z = JsonConvert.DeserializeObject<jsonTemplates.essRegion>(y);
+				return z;
+			}
+			public async static Task<string> essRegionJason(int regionNumber, string soc)
+			{
+				var url = "http://api.lmiforall.org.uk/api/v1/ess/region/" + regionNumber + "/" + soc + "?coarse=true";
+				var y = await HttpGet(url);
+				dynamic z = JsonConvert.DeserializeObject(y);
+				return JsonConvert.SerializeObject(z, Formatting.Indented);
+			}
 		}
 		private static async Task<string> HttpGet(string urlIn)
 		{

@@ -125,8 +125,10 @@ namespace dataprod
 
 						ShowChart(commands.Length > 2 ? commands[3] : "line", dataBuilder); //default to line if <AS> not given
 						break;
-					case "analyse":
-						throw new NotImplementedException();
+					case "map":
+						dynGrid.Visibility = Visibility.Collapsed;
+						mappletGrid.Visibility = Visibility.Visible;
+						TextBlockLower.Text = await dataGrabber.LMI.essRegionJason(1, "2136");
 						break;
 
 					case ":" :
