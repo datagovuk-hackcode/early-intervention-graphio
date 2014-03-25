@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -17,6 +18,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+using Bing.Maps;
 using WinRTXamlToolkit.Controls.DataVisualization.Charting;
 
 namespace dataprod
@@ -128,7 +130,12 @@ namespace dataprod
 					case "map":
 						dynGrid.Visibility = Visibility.Collapsed;
 						mappletGrid.Visibility = Visibility.Visible;
-						TextBlockLower.Text = await dataGrabber.LMI.essRegionJason(1, "2136");
+						BINGIT.MapType = MapType.HighContrast;
+
+						var loc = new Location(53.136954, -1.392331);
+						BINGIT.SetView(loc, 7.00);
+
+						Debug.WriteLine(await dataGrabber.LMI.essRegionJason(1, "2136"));
 						break;
 
 					case ":" :

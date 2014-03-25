@@ -159,14 +159,14 @@
 			</Grid.ColumnDefinitions>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="2*"/>
-				<RowDefinition Height="10" />
-				<RowDefinition Height="1*" />
 			</Grid.RowDefinitions>
 			<Grid>
-				<bm:Map Credentials="AqWFVBk-IiOefow489-Jkj0nRTC52AX1nqPvSEfHFmWI5ZOWFJxH3XokizYdxMpn" x:Name="BINGIT"></bm:Map>
+				<bm:Map Credentials="AqWFVBk-IiOefow489-Jkj0nRTC52AX1nqPvSEfHFmWI5ZOWFJxH3XokizYdxMpn"
+						x:Name="BINGIT"
+						></bm:Map>
 			</Grid>
 			
-			<TextBlock x:Name="TextBlockLower" Grid.Row="2" Foreground="White"/>
+			<TextBlock x:Name="TextBlockLower" Grid.Row="1" Foreground="White" Visibility="Visible" />
 		</Grid>
 
 	</Grid>
