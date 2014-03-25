@@ -122,7 +122,7 @@ namespace dataprod
 							}
 
 						//how
-						ShowChart(commands[2] == "as" ? commands[3] : "line", dataBuilder); //default to line if <AS> not given
+						ShowChart(commands.Length > 2 ? commands[3] : "line", dataBuilder); //default to line if <AS> not given
 						break;
 					case "analyse":
 						throw new NotImplementedException();
