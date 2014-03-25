@@ -23,7 +23,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\dataprod.exe">
       <PackagePath>dataprod.exe</PackagePath>
-      <Modified>2014-03-25T13:55:15.251</Modified>
+      <Modified>2014-03-25T14:27:47.884</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -59,7 +59,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-03-25T11:29:22.362</Modified>
+      <Modified>2014-03-25T14:21:20.461</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
@@ -255,7 +255,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-03-25T13:55:15.371</Modified>
+      <Modified>2014-03-25T14:27:48.018</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

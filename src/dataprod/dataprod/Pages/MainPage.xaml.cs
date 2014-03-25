@@ -40,7 +40,7 @@ namespace dataprod
 		private async void UserPrompt_OnKeyDown(object sender, KeyRoutedEventArgs e)
 		{
 
-			//OPERATOR, <EMPLOYMENT/SOC>, <AS>, <GRAPH>, <BETWEEN>, <start:end>
+			//OPERATOR, <EMPLOYMENT/SOC>, <AS>, <GRAPH>, <BETWEEN>, <start:end>, <filter> <filtertype>
 			//show programming as line
 			 if (e.Key == VirtualKey.Enter)
 			{
@@ -105,9 +105,18 @@ namespace dataprod
 									startYear = "2013";
 									endYear = "2020";
 								}
+								if (commands.Length > 5)
+								{
+									var y = await dataGrabber.LMI.wffilterpredict(soc, commands[7], startYear, endYear);
+								}
+								else
+								{
+									var y = await dataGrabber.LMI.wfpredict(soc, startYear, endYear);
+									dataBuilder =
+										y.predictedEmployment.Select(
+											data => new testDataTemplate {year = data.year.ToString(), value = data.employment}).ToList();
 
-								var y = await dataGrabber.LMI.wfpredict(soc, startYear, endYear);
-								dataBuilder = y.predictedEmployment.Select(data => new testDataTemplate { year = data.year.ToString(), value = data.employment } ).ToList();
+								}
 								break;
 							}
 

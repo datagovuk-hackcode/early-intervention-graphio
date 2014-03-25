@@ -15,12 +15,22 @@ namespace dataprod
 	{
 		public static class LMI
 		{
-			public async static Task<jsonTemplates.wfprefict> wfpredict(string soc, string minYear, string maxYear)
+			public async static Task<jsonTemplates.wfpredict> wfpredict(string soc, string minYear, string maxYear)
 			{
 				var y = await HttpGet("http://api.lmiforall.org.uk/api/v1/wf/predict?soc=" + soc + "&minYear=" + minYear + "&maxYear=" + maxYear);
-				var z = JsonConvert.DeserializeObject<jsonTemplates.wfprefict>(y);
+				var z = JsonConvert.DeserializeObject<jsonTemplates.wfpredict>(y);
 				return z;
 			}
+
+			public async static Task<jsonTemplates.wffilterpredict> wffilterpredict(string soc, string filter, string minYear, string maxYear)
+			{
+				var url = "http://api.lmiforall.org.uk/api/v1/wf/predict/breakdown/" + filter + "?soc=" + soc + "&minYear=" + minYear +
+				          "&maxYear=" + maxYear;
+				var y = await HttpGet(url);
+				var z = JsonConvert.DeserializeObject<jsonTemplates.wffilterpredict>(y);
+				return z;
+			}
+
 			public async static Task<List<jsonTemplates.socSearch>> socSearch(string profession)
 			{
 				var y = await HttpGet("http://api.lmiforall.org.uk/api/v1/soc/search?q=" + profession);
