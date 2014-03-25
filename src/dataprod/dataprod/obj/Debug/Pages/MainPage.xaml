@@ -135,7 +135,7 @@
 			Visibility="Visible">
 			<!--TextBlock Text="I want information on: " FontSize="40"
                        VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,0"/-->
-			<TextBox x:ConnectionId='0' PlaceholderText="Prompt" FontSize="40"
+			<TextBox x:ConnectionId='1' PlaceholderText="Prompt" FontSize="40"
 					                              
 					VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
 					x:Name="UserPrompt" FontFamily="Global User Interface" Margin="0,0,0,-4" Style="{StaticResource TextBoxStyle1}" />

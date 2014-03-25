@@ -42,3 +42,11 @@ C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVis
 C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.pri.xml
 C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization.pri.xml
 C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\dataprod.csprojResolveAssemblyReference.cache
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\layout.resfiles
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\layout.resfiles.intermediate
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\Resources.resfiles
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\Resources.resfiles.intermediate
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\pri.resfiles
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\pri.resfiles.intermediate
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\priconfig.xml
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\priconfig.xml.intermediate

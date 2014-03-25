@@ -17,13 +17,13 @@
     <AppXManifest Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-03-25T11:29:23.045</Modified>
+      <Modified>2014-03-25T13:52:07.427</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\dataprod.exe">
       <PackagePath>dataprod.exe</PackagePath>
-      <Modified>2014-03-25T12:31:36.503</Modified>
+      <Modified>2014-03-25T13:55:15.251</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -63,7 +63,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
-      <Modified>2014-03-25T11:52:24.179</Modified>
+      <Modified>2014-03-25T13:23:50.576</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\AnimatingContainer.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\AnimatingContainer.xbf</PackagePath>
@@ -255,7 +255,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-03-25T12:30:57.168</Modified>
+      <Modified>2014-03-25T13:55:15.371</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
