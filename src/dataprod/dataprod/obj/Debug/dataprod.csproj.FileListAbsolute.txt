@@ -29,3 +29,15 @@ C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\qualifiers.txt
 C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\qualifiers.txt.intermediate
 C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\ProjectArchitectures.txt
+C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\Newtonsoft.Json.dll
+C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\WinRTXamlToolkit.Controls.DataVisualization.dll
+C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\WinRTXamlToolkit.dll
+C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\Newtonsoft.Json.xml
+C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\WinRTXamlToolkit.pri
+C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\WinRTXamlToolkit.Controls.DataVisualization.pri
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\en-US\WinRTXamlToolkit.Controls.DataVisualization.Properties.Resources.resw
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\dataprod.csproj.GenerateResource.Cache
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization.pri
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\qualifiers.txt
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.pri.xml
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization.pri.xml

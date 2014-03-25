@@ -17,13 +17,25 @@
     <AppXManifest Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-03-25T10:41:34.223</Modified>
+      <Modified>2014-03-25T11:29:23.045</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\dataprod.exe">
       <PackagePath>dataprod.exe</PackagePath>
-      <Modified>2014-03-25T10:43:33.020</Modified>
+      <Modified>2014-03-25T11:33:08.620</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2014-03-25T10:51:13.969</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization.dll">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization.dll</PackagePath>
+      <Modified>2014-03-25T11:00:22.622</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit.dll">
+      <PackagePath>WinRTXamlToolkit.dll</PackagePath>
+      <Modified>2014-03-25T10:50:53.482</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -47,15 +59,203 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-03-25T10:41:33.608</Modified>
+      <Modified>2014-03-25T11:29:22.362</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
-      <Modified>2014-03-25T10:43:32.833</Modified>
+      <Modified>2014-03-25T11:31:32.358</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\AnimatingContainer.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\AnimatingContainer.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.488</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\CascadingTextBlock.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CascadingTextBlock.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.495</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\CountdownControl.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CountdownControl.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.502</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\AlternativeFrame\AlternativeFrame.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\AlternativeFrame\AlternativeFrame.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.486</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\CameraCaptureControl\CameraCaptureControl.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CameraCaptureControl\CameraCaptureControl.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.492</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\CascadingImageControl\CascadingImageControl.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CascadingImageControl\CascadingImageControl.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.494</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\ColorPicker\ColorPicker.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\ColorPicker\ColorPicker.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.499</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\CustomAppBar\CustomAppBar.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CustomAppBar\CustomAppBar.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.504</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\CustomGridSplitter\CustomGridSplitter.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CustomGridSplitter\CustomGridSplitter.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.505</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\DelayedLoadControl\DelayedLoadControl.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\DelayedLoadControl\DelayedLoadControl.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.507</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\FxContentControl\FxContentControl.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\FxContentControl\FxContentControl.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.508</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\ImageButton\ImageButton.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\ImageButton\ImageButton.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.510</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\ImageToggleButton\ImageToggleButton.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\ImageToggleButton\ImageToggleButton.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.517</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\InputDialog\InputDialog.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\InputDialog\InputDialog.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.520</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\ListItemButton\ListItemButton.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\ListItemButton\ListItemButton.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.522</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\NumericUpDown\NumericUpDown.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\NumericUpDown\NumericUpDown.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.526</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\TreeView\TreeView.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeView.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.529</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\TreeView\TreeViewItem.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewItem.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.533</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\TreeView\TreeViewMouse.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewMouse.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.536</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\TreeView\TreeViewTouch.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewTouch.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.539</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\WatermarkPasswordBox\WatermarkPasswordBox.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\WatermarkPasswordBox\WatermarkPasswordBox.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.541</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\WatermarkTextBox\WatermarkTextBox.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\WatermarkTextBox\WatermarkTextBox.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.545</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Controls\WebBrowser\WebBrowser.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\WebBrowser\WebBrowser.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.549</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.1.5.4.3\lib\netcore451\WinRTXamlToolkit\Themes\Generic.xbf">
+      <PackagePath>WinRTXamlToolkit\Themes\Generic.xbf</PackagePath>
+      <Modified>2014-03-25T10:50:53.552</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\AxisLabel.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\AxisLabel.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.626</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\DateTimeAxisLabel.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\DateTimeAxisLabel.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.627</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\DisplayAxis.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\DisplayAxis.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.628</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\NumericAxisLabel.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\NumericAxisLabel.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.629</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\RangeAxis.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Axis\RangeAxis.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.630</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Chart\Chart.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Chart\Chart.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.633</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\AreaDataPoint.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\AreaDataPoint.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.635</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\BarDataPoint.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\BarDataPoint.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.636</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\BubbleDataPoint.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\BubbleDataPoint.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.638</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\ColumnDataPoint.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\ColumnDataPoint.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.639</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\LineDataPoint.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\LineDataPoint.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.640</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\PieDataPoint.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\PieDataPoint.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.641</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\ScatterDataPoint.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\DataPoint\ScatterDataPoint.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.642</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Primitives\DelegatingListBox.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Primitives\DelegatingListBox.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.643</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\AreaSeries.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\AreaSeries.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.645</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\DataPointSeries.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\DataPointSeries.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.646</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\DefinitionSeries.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\DefinitionSeries.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.647</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\LegendItem.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\LegendItem.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.648</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\LineSeries.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\LineSeries.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.652</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\PieSeries.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Charting\Series\PieSeries.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.653</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Legend\Legend.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Legend\Legend.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.655</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Themes\Generic.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Themes\Generic.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.658</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\packages\WinRTXamlToolkit.Controls.DataVisualization.1.5.4.3\lib\netcore451\WinRTXamlToolkit.Controls.DataVisualization\Title\Title.xbf">
+      <PackagePath>WinRTXamlToolkit.Controls.DataVisualization\Title\Title.xbf</PackagePath>
+      <Modified>2014-03-25T11:00:22.660</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Data\hacks2\src\dataprod\dataprod\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-03-25T10:41:34.025</Modified>
+      <Modified>2014-03-25T11:31:32.705</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
