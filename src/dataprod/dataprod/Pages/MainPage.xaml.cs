@@ -32,6 +32,8 @@ namespace dataprod
 		    public  double value { get; set; }
 	    }
 
+	    private bool layer = false;
+
 	    public MainPage()
         {
             this.InitializeComponent();
@@ -121,11 +123,22 @@ namespace dataprod
 								break;
 							}
 
-						//how
 						ShowChart(commands.Length > 2 ? commands[3] : "line", dataBuilder); //default to line if <AS> not given
 						break;
 					case "analyse":
 						throw new NotImplementedException();
+						break;
+
+					case ":" :
+						switch (commands[1])
+						{
+							case "layer" :
+								layer = true;
+								break;
+							case "unlayer":
+								layer = false;
+								break;
+						}
 						break;
 				}
 
@@ -147,13 +160,18 @@ namespace dataprod
 			//	ItemsSource = testData
 			//} );
 
-		    (MainChart1.Series[0] as AreaSeries).ItemsSource = null;
-		    (MainChart1.Series[1] as BarSeries).ItemsSource = null;
-			(MainChart1.Series[2] as BubbleSeries).ItemsSource = null;
-			(MainChart1.Series[3] as ColumnSeries).ItemsSource = null;
-			(MainChart1.Series[4] as LineSeries).ItemsSource = null;
-			(MainChart1.Series[5] as PieSeries).ItemsSource = null;
-			(MainChart1.Series[6] as ScatterSeries).ItemsSource = null;
+			if (layer == false)
+		    {
+				(MainChart1.Series[0] as AreaSeries).ItemsSource = null;
+				(MainChart1.Series[1] as BarSeries).ItemsSource = null;
+				(MainChart1.Series[2] as BubbleSeries).ItemsSource = null;
+				(MainChart1.Series[3] as ColumnSeries).ItemsSource = null;
+				(MainChart1.Series[4] as LineSeries).ItemsSource = null;
+				(MainChart1.Series[5] as PieSeries).ItemsSource = null;
+				(MainChart1.Series[6] as ScatterSeries).ItemsSource = null;    
+		    }
+
+		    
 
 		    switch (chartType)
 		    {

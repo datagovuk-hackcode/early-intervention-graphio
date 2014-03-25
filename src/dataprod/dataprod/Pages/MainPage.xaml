@@ -150,8 +150,22 @@
 			<Charting:LineSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
 			<Charting:PieSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
 			<Charting:ScatterSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
-
 			</Charting:Chart>
+		</Grid>
+		<Grid Grid.Column="1" Grid.Row="2" x:Name="mappletGrid">
+			<Grid.ColumnDefinitions>
+				
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="10" />
+				<RowDefinition Height="1*" />
+			</Grid.RowDefinitions>
+			<Grid>
+				
+			</Grid>
+			
+			<TextBlock x:Name="TextBlockLower" Grid.Row="1"/>
 		</Grid>
 
 	</Grid>
