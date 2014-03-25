@@ -81,28 +81,16 @@ namespace dataprod
 						break;
 				}
 
-				//how
-				if (commands[2] == "as")
-				{
-					//switch (commands[3])
-					//{
-					//	default:
-					//		
-					//		break;
-					//}
-				}
-				else
-				{
-						
-				}
 				//operator
 				switch (commands[0])
 				{
 					case "show":
-						ShowChart(commands[3], dataBuilder);
+
+						//how
+						ShowChart(commands[2] == "as" ? commands[3] : "line", dataBuilder); //default to line if <AS> not given
 						break;
 					case "analyse":
-
+						throw new NotImplementedException();
 						break;
 				}
 			}
