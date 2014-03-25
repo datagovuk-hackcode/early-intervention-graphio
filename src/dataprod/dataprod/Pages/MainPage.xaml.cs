@@ -82,15 +82,26 @@ namespace dataprod
 				new testDataTemplate {year = "2030", value = 41}, 
 		    };
 
+			//var dataChart = new Chart();
+			//dynGrid.Children.Add(dataChart);
+			//dataChart.Series.Add(new ScatterSeries
+			//{
+			//	Title = "Programmer",
+			//	IndependentValuePath = "year",5
+			//	DependentValuePath = "value",
+			//	ItemsSource = testData
+			//} );
+
+
 		    (MainChart1.Series[0] as ScatterSeries).ItemsSource = testData;
 
-		    //MainChart0.Series.Add(new ScatterSeries
-		    //{
-		    //	Title = "ComputerScience",
-		    //	IndependentValuePath = "year",
-		    //	DependentValuePath = "value",
-		    //	ItemsSource = testData
-		    //});
+			//MainChart1.Series.Add(new ScatterSeries
+			//{
+			//	Title = "ComputerScience",
+			//	IndependentValuePath = "year",
+			//	DependentValuePath = "value",
+			//	ItemsSource = testData
+			//});
 	    }
     }
 }

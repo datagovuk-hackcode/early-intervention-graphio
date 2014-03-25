@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\data\hacks2\src\dataprod\dataprod\obj\debug\intermediatexaml\dataprod.exe" HashGuid="66a0ad19-f5e6-1d25-965d-ae5e01690e88" />
+    <LocalAssembly PathName="c:\data\hacks2\src\dataprod\dataprod\obj\debug\intermediatexaml\dataprod.exe" HashGuid="9de009f3-f032-3c01-61e3-4cce7091723f" />
     <ReferenceAssembly PathName="c:\data\hacks2\src\dataprod\packages\newtonsoft.json.6.0.1\lib\netcore45\newtonsoft.json.dll" HashGuid="09c236d1-053d-8905-8ef0-17027540c930" />
     <ReferenceAssembly PathName="c:\data\hacks2\src\dataprod\packages\winrtxamltoolkit.controls.datavisualization.1.5.4.3\lib\netcore451\winrtxamltoolkit.controls.datavisualization.dll" HashGuid="48c793ae-3aea-146b-5f71-e4d3f6fb486f" />
     <ReferenceAssembly PathName="c:\data\hacks2\src\dataprod\packages\winrtxamltoolkit.1.5.4.3\lib\netcore451\winrtxamltoolkit.dll" HashGuid="5e9cdb98-d894-297f-abde-39796d45dfee" />
