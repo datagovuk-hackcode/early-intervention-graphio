@@ -135,16 +135,23 @@
 			Visibility="Visible">
 			<!--TextBlock Text="I want information on: " FontSize="40"
                        VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,0"/-->
-			<TextBox x:ConnectionId='1' PlaceholderText="Prompt" FontSize="40"
+			<TextBox x:ConnectionId='0' PlaceholderText="Prompt" FontSize="40"
 					                              
 					VerticalAlignment="Bottom" Foreground="White" Background="Transparent" BorderThickness="0"
 					x:Name="UserPrompt" FontFamily="Global User Interface" Margin="0,0,0,-4" Style="{StaticResource TextBoxStyle1}" />
 		</StackPanel>
 
 		<Grid Grid.Column="1" Grid.Row="2" x:Name="dynGrid">
-		<Charting:Chart x:Name="MainChart1" >
-			<!--<Charting:ScatterSeries Title="Programmer" Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>-->
-		</Charting:Chart>
+			<Charting:Chart x:Name="MainChart1" >
+			<Charting:AreaSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+			<Charting:BarSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+			<Charting:BubbleSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+			<Charting:ColumnSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+			<Charting:LineSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+			<Charting:PieSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+			<Charting:ScatterSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+
+			</Charting:Chart>
 		</Grid>
 
 	</Grid>

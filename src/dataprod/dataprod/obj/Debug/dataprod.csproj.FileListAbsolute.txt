@@ -41,3 +41,4 @@ C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVis
 C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization\qualifiers.txt
 C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.pri.xml
 C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\WinRTXamlToolkit.Controls.DataVisualization.pri.xml
+C:\Data\hacks2\src\dataprod\dataprod\obj\Debug\dataprod.csprojResolveAssemblyReference.cache
