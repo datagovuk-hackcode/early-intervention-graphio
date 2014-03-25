@@ -105,9 +105,10 @@ namespace dataprod
 									startYear = "2013";
 									endYear = "2020";
 								}
-								if (commands.Length > 5)
+								if (commands.Length > 6)
 								{
-									var y = await dataGrabber.LMI.wffilterpredict(soc, commands[7], startYear, endYear);
+									var y = await dataGrabber.LMI.wffilterpredict(soc, commands[5], startYear, endYear);
+
 								}
 								else
 								{
