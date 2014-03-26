@@ -121,7 +121,7 @@ namespace dataprod
 					case "analyse": //check degree from the normal
 						switch (commands[2])
 						{
-							case "regression" :
+							case "full" :
 
 								switch (commands[3])
 								{
@@ -152,7 +152,29 @@ namespace dataprod
 											}
 											OutputGrid.Visibility = Visibility.Visible;
 
-											Output.Text = "Slope: " + Math.Round(ds.Slope, 2) + "\n";
+											var deviation = new List<double>();
+
+											var gradient = ds.ComputeRSquared();
+
+											foreach (var data in d)
+											{
+												deviation.Add(data.value - (Convert.ToDouble(data.year)*(gradient)));
+											}
+
+											double deviationAverage = 0.00;
+
+											foreach (var d1 in deviation)
+											{
+												deviationAverage += d1;
+											}
+
+											deviationAverage = deviationAverage/deviation.Count;
+
+											OutputGrid.Visibility = Visibility.Visible;
+											Output.Visibility = Visibility.Visible;
+
+											Output.Text = "Average Deviation: " + deviationAverage + "\n";
+											Output.Text += "Slope: " + Math.Round(ds.Slope, 2) + "\n";
 											Output.Text += "YIntercept: " + Math.Round(ds.YIntercept, 2) + "\n";
 											Output.Text += "Rsquared: " + Math.Round(ds.ComputeRSquared(), 3) + "\n"; 
 										}
