@@ -121,7 +121,7 @@ namespace dataprod
 					case "analyse": //check degree from the normal
 						switch (commands[2])
 						{
-							case "full" :
+							case "regression" :
 
 								switch (commands[3])
 								{
