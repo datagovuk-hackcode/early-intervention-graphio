@@ -64,6 +64,16 @@ namespace dataprod
 			}
 		}
 
+		public class reverseSOC
+		{
+			public int soc { get; set; }
+			public string tasks { get; set; }
+			public string description { get; set; }
+			public string title { get; set; }
+			public string qualifications { get; set; }
+			public List<string> add_titles { get; set; }
+		}
+
 		public class ToastWaffle
 		{
 			public List<Datum> data { get; set; }

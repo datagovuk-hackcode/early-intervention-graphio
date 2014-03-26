@@ -52,6 +52,15 @@ namespace dataprod
 				dynamic z = JsonConvert.DeserializeObject(y);
 				return JsonConvert.SerializeObject(z, Formatting.Indented);
 			}
+
+			public static async Task<string> reverseSOC(string soc)
+			{
+
+				var url = "http://api.lmiforall.org.uk/api/v1/soc/code/" + soc;
+				var y = await HttpGet(url);
+				var z = JsonConvert.DeserializeObject<jsonTemplates.reverseSOC>(y);
+				return z.title;
+			}
 		}
 
 		public static class ToastWaffle
