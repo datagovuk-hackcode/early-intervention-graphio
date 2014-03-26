@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -19,6 +20,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 using Bing.Maps;
+using CommonLib.Numerical;
 using WinRTXamlToolkit.Controls.DataVisualization.Charting;
 
 namespace dataprod
@@ -28,6 +30,7 @@ namespace dataprod
     /// </summary>
     public sealed partial class MainPage : Page
     {
+		List<testDataTemplate> dataBuilder = new List<testDataTemplate>();
 	    private class testDataTemplate
 	    {
 		    public  string year { get; set; }
@@ -47,8 +50,8 @@ namespace dataprod
 			//OPERATOR, <EMPLOYMENT/SOC>, <AS>, <GRAPH>, <BETWEEN>, <start:end>, <filter> <filtertype>
 			//show programming as line
 			 if (e.Key == VirtualKey.Enter)
-			{
-				var dataBuilder = new List<testDataTemplate>();
+			 {
+				
 				var commands = UserPrompt.Text.ToLower().Split(new char[] { ' ', ',' });
 
 				switch (commands[0])
@@ -87,41 +90,8 @@ namespace dataprod
 								break;
 
 							default:
-								string soc;
-								if (commands[1].Contains("soc"))
-								{
-									soc = commands[1].Split(':')[1];
-								}
-								else
-								{
-									soc = (await (dataGrabber.LMI.socSearch(commands[1]))).FirstOrDefault().soc.ToString();
-								}
-								string startYear;
-								string endYear;
-
-								if (commands.Length > 4)
-								{
-									startYear = commands[5].Split(':')[0];  
-									endYear = commands[5].Split(':')[1];
-								}
-								else
-								{
-									startYear = "2013";
-									endYear = "2020";
-								}
-								if (commands.Length > 6)
-								{
-									var y = await dataGrabber.LMI.wffilterpredict(soc, commands[5], startYear, endYear);
-
-								}
-								else
-								{
-									var y = await dataGrabber.LMI.wfpredict(soc, startYear, endYear);
-									dataBuilder =
-										y.predictedEmployment.Select(
-											data => new testDataTemplate {year = data.year.ToString(), value = data.employment}).ToList();
-
-								}
+								dataBuilder = await GetYearEmploymentDataSmart(commands);
+								
 								break;
 							}
 
@@ -152,6 +122,44 @@ namespace dataprod
 						switch (commands[2])
 						{
 							case "regression" :
+
+								switch (commands[3])
+								{
+									case "auto" :
+
+										if (commands[1] == "all")
+										{
+												
+										}
+										else
+										{
+											var d = await GetYearEmploymentDataSmart(commands);
+
+											var years = d.Select(year => Convert.ToDouble(year.year)).ToList();
+											var values = d.Select(year => Convert.ToDouble(year.value)).ToList();
+											var ds = new XYDataSet(years, values);
+
+											double smallestYear = years.Min();
+											double smallestValue = values.Min();
+
+											for (int i = 0; i < years.Count ; i++) //normalise
+											{
+												years[i] -= smallestYear;
+											}
+											for (int i = 0; i < values.Count; i++)
+											{
+												values[i] -= smallestValue;
+											}
+											OutputGrid.Visibility = Visibility.Visible;
+
+											Output.Text = "Slope: " + Math.Round(ds.Slope, 2) + "\n";
+											Output.Text += "YIntercept: " + Math.Round(ds.YIntercept, 2) + "\n";
+											Output.Text += "Rsquared: " + Math.Round(ds.ComputeRSquared(), 3) + "\n"; 
+										}
+
+										break;
+								}
+
 								break;
 						}
 						break;
@@ -181,13 +189,60 @@ namespace dataprod
 					case ":" :
 						switch (commands[1])
 						{
+							case "reset" :
+								ClearGraph();
+								break;
 							case "layer" :
 								layer = true;
 								break;
 							case "unlayer":
 								layer = false;
 								break;
-						}
+							case "regression":
+
+								if (dataBuilder.Count > 0) //compare to normal reg line
+								{
+									//var d = await GetYearEmploymentDataSmart(commands);
+
+									var d = dataBuilder;
+
+									var years = d.Select(year => Convert.ToDouble(year.year)).ToList();
+									var values = d.Select(year => Convert.ToDouble(year.value)).ToList();
+									var ds = new XYDataSet(years, values);
+
+									double smallestYear = years.Min();
+									double smallestValue = values.Min();
+
+									//var yearsReg = new List<double>();
+									//var valuesReg = new List<double>();
+
+									var y = new List<testDataTemplate>();
+
+									const double reg = 2000;
+
+									for (int i = 0; i < years.Count; i++)
+									{
+										y.Add(new testDataTemplate
+										{
+											year = (smallestYear + i).ToString(), //fine
+											value = smallestValue + (i*reg)
+										});
+
+										//yearsReg.Add(smallestYear + i);
+										//valuesReg.Add(smallestValue + (smallestYear + i)*reg);
+									}
+
+									ShowChartReg(y);
+
+
+									//OutputGrid.Visibility = Visibility.Visible;
+
+									//Output.Text = "Slope: " + Math.Round(ds.Slope, 2) + "\n";
+									//Output.Text += "YIntercept: " + Math.Round(ds.YIntercept, 2) + "\n";
+									//Output.Text += "Rsquared: " + Math.Round(ds.ComputeRSquared(), 3) + "\n";
+								}
+								break;
+								}
 						break;
 				}
 
@@ -196,6 +251,63 @@ namespace dataprod
 
 		}
 
+	    private void ClearGraph()
+	    {
+			(MainChart1.Series[0] as AreaSeries).ItemsSource = null;
+			(MainChart1.Series[1] as BarSeries).ItemsSource = null;
+			(MainChart1.Series[2] as BubbleSeries).ItemsSource = null;
+			(MainChart1.Series[3] as ColumnSeries).ItemsSource = null;
+			(MainChart1.Series[4] as LineSeries).ItemsSource = null;
+			(MainChart1.Series[5] as PieSeries).ItemsSource = null;
+			(MainChart1.Series[6] as ScatterSeries).ItemsSource = null;
+			(MainChart1.Series[7] as LineSeries).ItemsSource = null;
+	    }
+
+	    private async Task<List<testDataTemplate>> GetYearEmploymentDataSmart(string[] commands)
+	    {
+		    string soc;
+			if (commands[1].Contains("soc"))
+			{
+				soc = commands[1].Split(':')[1];
+			}
+			else
+			{
+				soc = (await(dataGrabber.LMI.socSearch(commands[1]))).FirstOrDefault().soc.ToString();
+			}
+			string startYear;
+			string endYear;
+
+			if (commands.Length > 4)
+			{
+				startYear = commands[5].Split(':')[0];
+				endYear = commands[5].Split(':')[1];
+			}
+			else
+			{
+				startYear = "2013";
+				endYear = "2020";
+			}
+			//if (commands.Length > 6)
+			//{
+			//	var y = await dataGrabber.LMI.wffilterpredict(soc, commands[5], startYear, endYear);
+
+			//}
+			//else
+			//{
+				var y = await dataGrabber.LMI.wfpredict(soc, startYear, endYear);
+				return
+					y.predictedEmployment.Select(
+						data => new testDataTemplate { year = data.year.ToString(), value = data.employment }).ToList();
+
+			//}
+	    }
+
+	    private void ShowChartReg(List<testDataTemplate> reg)
+	    {
+		    (MainChart1.Series[7] as LineSeries).ItemsSource = null;
+			//(MainChart1.Series[4] as LineSeries).ItemsSource = data;
+			(MainChart1.Series[7] as LineSeries).ItemsSource = reg;
+	    }
 	    private void ShowChart(string chartType, List<testDataTemplate> data )
 	    {
 

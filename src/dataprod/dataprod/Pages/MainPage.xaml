@@ -11,7 +11,7 @@
 
 	<Page.Resources>
 		<Style x:Key="TextBoxStyle1" TargetType="TextBox">
-			<Setter Property="MinWidth" Value="{ThemeResource TextControlThemeMinWidth}"/>
+			<!--Setter Property="MinWidth" Value="{ThemeResource TextControlThemeMinWidth}"/-->
 			<Setter Property="MinHeight" Value="{ThemeResource TextControlThemeMinHeight}"/>
 			<Setter Property="Foreground" Value="{ThemeResource TextBoxForegroundThemeBrush}"/>
 			<Setter Property="Background" Value="{ThemeResource TextBoxBackgroundThemeBrush}"/>
@@ -151,6 +151,7 @@
 				<Charting:LineSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
 				<Charting:PieSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
 				<Charting:ScatterSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+				<Charting:LineSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
 			</Charting:Chart>
 		</Grid>
 		<Grid Grid.Column="1" Grid.Row="2" x:Name="mappletGrid" Visibility="Collapsed">
@@ -165,27 +166,14 @@
 						x:Name="BINGIT"/>
 			</Grid>
 			
-			<TextBlock x:Name="TextBlockLower" Grid.Row="1" Foreground="White" Visibility="Visible" />
+			<TextBlock x:Name="TextBlockLower" Foreground="White" Visibility="Visible" />
 		</Grid>
-
-		<Grid Grid.Column="1" Grid.Row="2" x:Name="detailView" Visibility="Collapsed">
-			<Grid.ColumnDefinitions>
-
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="2*"/>
-				<RowDefinition Height="10"/>
-				<RowDefinition Height="1*"/>
-			</Grid.RowDefinitions>
-
-			<Charting:Chart x:Name="DetailChart1">
-				<Charting:ColumnSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
-			</Charting:Chart>
-
-			<TextBlock Grid.Row="1" Foreground="White" Visibility="Visible" />
+		<Grid Grid.Column="1" Grid.Row="2"  x:Name="OutputGrid" >
+			<TextBlock x:Name="Output" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" Height="300" FontSize="25" >
+				
+			</TextBlock>
 		</Grid>
 
 	</Grid>
-
 
 </Page>
