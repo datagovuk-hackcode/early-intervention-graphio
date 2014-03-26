@@ -106,7 +106,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="dataGrabber.cs" />
-    <Compile Include="jsonTemplates.cs" />
+    <Compile Include="Templates.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

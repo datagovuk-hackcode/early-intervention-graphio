@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
@@ -127,7 +128,7 @@ namespace dataprod
 
 						ShowChart(commands.Length > 2 ? commands[3] : "line", dataBuilder); //default to line if <AS> not given
 						break;
-					case "map":
+					case "map": //MEEEEEH, someone give me a polygon map
 						dynGrid.Visibility = Visibility.Collapsed;
 						mappletGrid.Visibility = Visibility.Visible;
 						BINGIT.MapType = MapType.HighContrast;
@@ -148,6 +149,28 @@ namespace dataprod
 
 						Debug.WriteLine(await dataGrabber.LMI.essRegionJason(1, "2136"));
 						break;
+					//case "analyse":
+					//	var year = commands[1];
+					//	var detailBuilder = new Templates.DetailedYear();
+					//	dynGrid.Visibility = Visibility.Collapsed;
+					//	detailView.Visibility = Visibility.Visible;
+
+					//	for (int i = 0; i < 8000; i++)
+					//	{
+					//		try
+					//		{
+					//			var x = await dataGrabber.LMI.wfpredict(i.ToString(), year, year);
+					//			if detailBuilder[x.soc]
+					//		}
+					//		catch (Exception ex)
+					//		{
+								
+					//		}
+							
+					//	}
+
+						//(DetailChart1.Series[0] as ColumnSeries).ItemsSource = detailBuilder.employments;
+						//break;
 
 					case ":" :
 						switch (commands[1])

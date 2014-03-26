@@ -53,6 +53,17 @@ namespace dataprod
 				return JsonConvert.SerializeObject(z, Formatting.Indented);
 			}
 		}
+
+		public static class ToastWaffle
+		{
+			public static async Task<jsonTemplates.ToastWaffle> GetFinancial()
+			{
+				var url = "http://unitcost.toastwaffle.com/api/";
+				var y = await HttpGet(url);
+				var z = JsonConvert.DeserializeObject<jsonTemplates.ToastWaffle>(y);
+				return z;
+			} 
+		}
 		private static async Task<string> HttpGet(string urlIn)
 		{
 			var request = (HttpWebRequest)WebRequest.Create(urlIn);

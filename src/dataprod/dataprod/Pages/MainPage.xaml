@@ -143,14 +143,14 @@
 		</StackPanel>
 
 		<Grid Grid.Column="1" Grid.Row="2" x:Name="dynGrid">
-			<Charting:Chart x:Name="MainChart1" Margin="1280,0,-1280,0" >
-			<Charting:AreaSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
-			<Charting:BarSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
-			<Charting:BubbleSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
-			<Charting:ColumnSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
-			<Charting:LineSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
-			<Charting:PieSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
-			<Charting:ScatterSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+			<Charting:Chart x:Name="MainChart1" >
+				<Charting:AreaSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+				<Charting:BarSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+				<Charting:BubbleSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+				<Charting:ColumnSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+				<Charting:LineSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+				<Charting:PieSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+				<Charting:ScatterSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
 			</Charting:Chart>
 		</Grid>
 		<Grid Grid.Column="1" Grid.Row="2" x:Name="mappletGrid" Visibility="Collapsed">
@@ -162,11 +162,27 @@
 			</Grid.RowDefinitions>
 			<Grid>
 				<bm:Map Credentials="AqWFVBk-IiOefow489-Jkj0nRTC52AX1nqPvSEfHFmWI5ZOWFJxH3XokizYdxMpn"
-						x:Name="BINGIT"
-						></bm:Map>
+						x:Name="BINGIT"/>
 			</Grid>
 			
 			<TextBlock x:Name="TextBlockLower" Grid.Row="1" Foreground="White" Visibility="Visible" />
+		</Grid>
+
+		<Grid Grid.Column="1" Grid.Row="2" x:Name="detailView" Visibility="Collapsed">
+			<Grid.ColumnDefinitions>
+
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="10"/>
+				<RowDefinition Height="1*"/>
+			</Grid.RowDefinitions>
+
+			<Charting:Chart x:Name="DetailChart1">
+				<Charting:ColumnSeries Margin="0" IndependentValuePath="year" DependentValuePath="value" IsSelectionEnabled="True"/>
+			</Charting:Chart>
+
+			<TextBlock Grid.Row="1" Foreground="White" Visibility="Visible" />
 		</Grid>
 
 	</Grid>
