@@ -195,6 +195,13 @@ namespace dataprod
 											regressionsToPlot = regressionsToPlot.OrderBy(x => x.value).ToList();
 											ShowChart("column", regressionsToPlot);
 
+											foreach (var reg in regressionsToPlot)
+											{
+												reg.year = await dataGrabber.LMI.reverseSOC(reg.year);
+											}
+
+											ShowChart("column", regressionsToPlot);
+
 
 										}
 										else //do all
