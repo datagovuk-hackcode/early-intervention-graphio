@@ -49,115 +49,165 @@ namespace dataprod
 
 			//OPERATOR, <EMPLOYMENT/SOC>, <AS>, <GRAPH>, <BETWEEN>, <start:end>, <filter> <filtertype>
 			//show programming as line
-			 if (e.Key == VirtualKey.Enter)
-			 {
-				
-				var commands = UserPrompt.Text.ToLower().Split(new char[] { ' ', ',' });
-
-				switch (commands[0])
+			if (e.Key == VirtualKey.Enter)
+			{
+				try
 				{
-					case "show":
-						switch (commands[1])
-						{
-							case "testdata":
-								var testData = new List<testDataTemplate>
-								{
-									new testDataTemplate {year = "2011", value = 14}, 
-									new testDataTemplate {year = "2012", value = 15}, 
-									new testDataTemplate {year = "2013", value = 16}, 
-									new testDataTemplate {year = "2014", value = 20}, 
-									new testDataTemplate {year = "2015", value = 18}, 
+					var commands = UserPrompt.Text.ToLower().Split(new char[] {' ', ','});
 
-									new testDataTemplate {year = "2016", value = 20}, 
-									new testDataTemplate {year = "2017", value = 24}, 
-									new testDataTemplate {year = "2018", value = 27}, 
-									new testDataTemplate {year = "2019", value = 29}, 
-									new testDataTemplate {year = "2020", value = 24}, 
+					switch (commands[0])
+					{
+						case "show":
+							switch (commands[1])
+							{
+								case "testdata":
+									var testData = new List<testDataTemplate>
+									{
+										new testDataTemplate {year = "2011", value = 14},
+										new testDataTemplate {year = "2012", value = 15},
+										new testDataTemplate {year = "2013", value = 16},
+										new testDataTemplate {year = "2014", value = 20},
+										new testDataTemplate {year = "2015", value = 18},
 
-									new testDataTemplate {year = "2021", value = 31}, 
-									new testDataTemplate {year = "2022", value = 32}, 
-									new testDataTemplate {year = "2023", value = 33}, 
-									new testDataTemplate {year = "2024", value = 39}, 
-									new testDataTemplate {year = "2025", value = 37}, 
+										new testDataTemplate {year = "2016", value = 20},
+										new testDataTemplate {year = "2017", value = 24},
+										new testDataTemplate {year = "2018", value = 27},
+										new testDataTemplate {year = "2019", value = 29},
+										new testDataTemplate {year = "2020", value = 24},
 
-									new testDataTemplate {year = "2026", value = 42}, 
-									new testDataTemplate {year = "2027", value = 43}, 
-									new testDataTemplate {year = "2028", value = 44}, 
-									new testDataTemplate {year = "2029", value = 45}, 
-									new testDataTemplate {year = "2030", value = 41}, 
-								};
-								dataBuilder = testData;
-								break;
+										new testDataTemplate {year = "2021", value = 31},
+										new testDataTemplate {year = "2022", value = 32},
+										new testDataTemplate {year = "2023", value = 33},
+										new testDataTemplate {year = "2024", value = 39},
+										new testDataTemplate {year = "2025", value = 37},
 
-							default:
-								dataBuilder = await GetYearEmploymentDataSmart(commands);
-								
-								break;
+										new testDataTemplate {year = "2026", value = 42},
+										new testDataTemplate {year = "2027", value = 43},
+										new testDataTemplate {year = "2028", value = 44},
+										new testDataTemplate {year = "2029", value = 45},
+										new testDataTemplate {year = "2030", value = 41},
+									};
+									dataBuilder = testData;
+									break;
+
+								default:
+									dataBuilder = await GetYearEmploymentDataSmart(commands);
+
+									break;
 							}
 
-						ShowChart(commands.Length > 2 ? commands[3] : "line", dataBuilder); //default to line if <AS> not given
-						break;
-					case "map": //MEEEEEH, someone give me a polygon map
-						dynGrid.Visibility = Visibility.Collapsed;
-						mappletGrid.Visibility = Visibility.Visible;
-						BINGIT.MapType = MapType.HighContrast;
+							ShowChart(commands.Length > 2 ? commands[3] : "line", dataBuilder); //default to line if <AS> not given
+							break;
+						case "map": //MEEEEEH, someone give me a polygon map
+							dynGrid.Visibility = Visibility.Collapsed;
+							mappletGrid.Visibility = Visibility.Visible;
+							BINGIT.MapType = MapType.HighContrast;
 
-						var loc = new Location(53.136954, -1.392331);
-						BINGIT.SetView(loc, 7.00);
+							var loc = new Location(53.136954, -1.392331);
+							BINGIT.SetView(loc, 7.00);
 
-						var pushpin = new Pushpin()
-						{
-							Text = "pins yo'"
-						};
-						MapLayer.SetPosition(pushpin, new Location
-						{
-							
-						});
-						BINGIT.Children.Add(pushpin);
+							var pushpin = new Pushpin()
+							{
+								Text = "pins yo'"
+							};
+							MapLayer.SetPosition(pushpin, new Location
+							{
+
+							});
+							BINGIT.Children.Add(pushpin);
 
 
-						Debug.WriteLine(await dataGrabber.LMI.essRegionJason(1, "2136"));
-						break;
-					case "analyse": //check degree from the normal
-						switch (commands[2])
-						{
-							case "regression" :
+							Debug.WriteLine(await dataGrabber.LMI.essRegionJason(1, "2136"));
+							break;
+						case "analyse": //check degree from the normal
+							switch (commands[2])
+							{
+								case "regression":
 
-								switch (commands[3])
-								{
-									case "auto" :
+									switch (commands[3])
+									{
+										case "auto":
 
-										if (commands[1] == "all")
-										{
-											var socs = new List<double>
+											if (commands[1] == "all")
 											{
-												2136,
-												2213,
-												2413,
-												2311,
-												2213,
-												2451,
-												4162,
-												4216,
-												3131,
-												3213,
-												8212,
-												1190,
-												1225,
-												1241,
-												1251,
-												2111
+												var socs = new List<double>
+												{
+													2136,
+													2213,
+													2413,
+													2311,
+													2213,
+													2451,
+													4162,
+													4216,
+													3131,
+													3213,
+													8212,
+													1190,
+													1225,
+													1241,
+													1251,
+													2111
 
 
-											};
+												};
 
-											var regressionsToPlot = new List<testDataTemplate>();
+												var regressionsToPlot = new List<testDataTemplate>();
 
-											foreach (var soc in socs) //waaa, this code is so un-refactored.
+												foreach (var soc in socs) //waaa, this code is so un-refactored.
+												{
+													var y = await dataGrabber.LMI.wfpredict(soc.ToString(), "2013", "2020");
+													var d = y.predictedEmployment.Select(
+														data => new testDataTemplate {year = data.year.ToString(), value = data.employment}).ToList();
+
+													var years = d.Select(year => Convert.ToDouble(year.year)).ToList();
+													var values = d.Select(year => Convert.ToDouble(year.value)).ToList();
+													var ds = new XYDataSet(years, values);
+
+													double smallestYear = years.Min();
+													double smallestValue = values.Min();
+
+													for (int i = 0; i < years.Count; i++) //normalise
+													{
+														years[i] -= smallestYear;
+													}
+													for (int i = 0; i < values.Count; i++)
+													{
+														values[i] -= smallestValue;
+													}
+													OutputGrid.Visibility = Visibility.Visible;
+
+													var gradient = ds.ComputeRSquared();
+
+													var deviation = d.Select(data => data.value - (Convert.ToDouble(data.year)*(gradient))).ToList();
+
+													double deviationAverage = deviation.Sum();
+
+													deviationAverage = deviationAverage/deviation.Count;
+
+													regressionsToPlot.Add(new testDataTemplate
+													{
+														year = soc.ToString(), //crap names is for graphing stuff, needs recode
+														value = deviationAverage
+													});
+
+													ShowChart("column", regressionsToPlot);
+												}
+												regressionsToPlot = regressionsToPlot.OrderBy(x => x.value).ToList();
+												ShowChart("column", regressionsToPlot);
+
+												foreach (var reg in regressionsToPlot)
+												{
+													reg.year = await dataGrabber.LMI.reverseSOC(reg.year);
+												}
+
+												ShowChart("column", regressionsToPlot);
+
+
+											}
+											else //do all
 											{
-												var y = await dataGrabber.LMI.wfpredict(soc.ToString(), "2013", "2020");
-												var d = y.predictedEmployment.Select(
-														data => new testDataTemplate { year = data.year.ToString(), value = data.employment }).ToList();
+												var d = await GetYearEmploymentDataSmart(commands);
 
 												var years = d.Select(year => Convert.ToDouble(year.year)).ToList();
 												var values = d.Select(year => Convert.ToDouble(year.value)).ToList();
@@ -178,166 +228,122 @@ namespace dataprod
 
 												var gradient = ds.ComputeRSquared();
 
-												var deviation = d.Select(data => data.value - (Convert.ToDouble(data.year) * (gradient))).ToList();
+												var deviation = d.Select(data => data.value - (Convert.ToDouble(data.year)*(gradient))).ToList();
 
 												double deviationAverage = deviation.Sum();
 
-												deviationAverage = deviationAverage / deviation.Count;
+												deviationAverage = deviationAverage/deviation.Count;
 
-												regressionsToPlot.Add(new testDataTemplate
-												{
-													year = soc.ToString(), //crap names is for graphing stuff, needs recode
-													value = deviationAverage
-												});
+												OutputGrid.Visibility = Visibility.Visible;
+												Output.Visibility = Visibility.Visible;
 
-												ShowChart("column", regressionsToPlot);
-											}
-											regressionsToPlot = regressionsToPlot.OrderBy(x => x.value).ToList();
-											ShowChart("column", regressionsToPlot);
-
-											foreach (var reg in regressionsToPlot)
-											{
-												reg.year = await dataGrabber.LMI.reverseSOC(reg.year);
+												Output.Text = "Average Deviation: " + deviationAverage + "\n";
+												Output.Text += "Slope: " + Math.Round(ds.Slope, 2) + "\n";
+												Output.Text += "YIntercept: " + Math.Round(ds.YIntercept, 2) + "\n";
+												Output.Text += "Rsquared: " + Math.Round(ds.ComputeRSquared(), 3) + "\n";
 											}
 
-											ShowChart("column", regressionsToPlot);
-
-
-										}
-										else //do all
-										{
-											var d = await GetYearEmploymentDataSmart(commands);
-
-											var years = d.Select(year => Convert.ToDouble(year.year)).ToList();
-											var values = d.Select(year => Convert.ToDouble(year.value)).ToList();
-											var ds = new XYDataSet(years, values);
-
-											double smallestYear = years.Min();
-											double smallestValue = values.Min();
-
-											for (int i = 0; i < years.Count ; i++) //normalise
-											{
-												years[i] -= smallestYear;
-											}
-											for (int i = 0; i < values.Count; i++)
-											{
-												values[i] -= smallestValue;
-											}
-											OutputGrid.Visibility = Visibility.Visible;
-
-											var gradient = ds.ComputeRSquared();
-
-											var deviation = d.Select(data => data.value - (Convert.ToDouble(data.year)*(gradient))).ToList();
-
-											double deviationAverage = deviation.Sum();
-
-											deviationAverage = deviationAverage/deviation.Count;
-
-											OutputGrid.Visibility = Visibility.Visible;
-											Output.Visibility = Visibility.Visible;
-
-											Output.Text = "Average Deviation: " + deviationAverage + "\n";
-											Output.Text += "Slope: " + Math.Round(ds.Slope, 2) + "\n";
-											Output.Text += "YIntercept: " + Math.Round(ds.YIntercept, 2) + "\n";
-											Output.Text += "Rsquared: " + Math.Round(ds.ComputeRSquared(), 3) + "\n"; 
-										}
-
-										break;
-								}
-
-								break;
-						}
-						break;
-					//case "analyse":
-					//	var year = commands[1];
-					//	var detailBuilder = new Templates.DetailedYear();
-					//	dynGrid.Visibility = Visibility.Collapsed;
-					//	detailView.Visibility = Visibility.Visible;
-
-					//	for (int i = 0; i < 8000; i++)
-					//	{
-					//		try
-					//		{
-					//			var x = await dataGrabber.LMI.wfpredict(i.ToString(), year, year);
-					//			if detailBuilder[x.soc]
-					//		}
-					//		catch (Exception ex)
-					//		{
-								
-					//		}
-							
-					//	}
-
-						//(DetailChart1.Series[0] as ColumnSeries).ItemsSource = detailBuilder.employments;
-						//break;
-
-					case ":" :
-						switch (commands[1])
-						{
-							case "reset" :
-								ClearGraph();
-								break;
-							case "layer" :
-								layer = true;
-								break;
-							case "unlayer":
-								layer = false;
-								break;
-							case "regression":
-
-								if (dataBuilder.Count > 0) //compare to normal reg line
-								{
-									//var d = await GetYearEmploymentDataSmart(commands);
-
-									var d = dataBuilder;
-
-									var years = d.Select(year => Convert.ToDouble(year.year)).ToList();
-									var values = d.Select(year => Convert.ToDouble(year.value)).ToList();
-									var ds = new XYDataSet(years, values);
-
-									double smallestYear = years.Min();
-									double smallestValue = values.Min();
-
-									//var yearsReg = new List<double>();
-									//var valuesReg = new List<double>();
-
-									var y = new List<testDataTemplate>();
-
-									const double reg = 2000;
-
-									for (int i = 0; i < years.Count; i++)
-									{
-										y.Add(new testDataTemplate
-										{
-											year = (smallestYear + i).ToString(), //fine
-											value = smallestValue + (i*reg)
-										});
-
-										//yearsReg.Add(smallestYear + i);
-										//valuesReg.Add(smallestValue + (smallestYear + i)*reg);
+											break;
 									}
 
-									ShowChartReg(y);
+									break;
+							}
+							break;
+							//case "analyse":
+							//	var year = commands[1];
+							//	var detailBuilder = new Templates.DetailedYear();
+							//	dynGrid.Visibility = Visibility.Collapsed;
+							//	detailView.Visibility = Visibility.Visible;
+
+							//	for (int i = 0; i < 8000; i++)
+							//	{
+							//		try
+							//		{
+							//			var x = await dataGrabber.LMI.wfpredict(i.ToString(), year, year);
+							//			if detailBuilder[x.soc]
+							//		}
+							//		catch (Exception ex)
+							//		{
+
+							//		}
+
+							//	}
+
+							//(DetailChart1.Series[0] as ColumnSeries).ItemsSource = detailBuilder.employments;
+							//break;
+
+						case ":":
+							switch (commands[1])
+							{
+								case "reset":
+									ClearGraph();
+									break;
+								case "layer":
+									layer = true;
+									break;
+								case "unlayer":
+									layer = false;
+									break;
+								case "regression":
+
+									if (dataBuilder.Count > 0) //compare to normal reg line
+									{
+										//var d = await GetYearEmploymentDataSmart(commands);
+
+										var d = dataBuilder;
+
+										var years = d.Select(year => Convert.ToDouble(year.year)).ToList();
+										var values = d.Select(year => Convert.ToDouble(year.value)).ToList();
+										var ds = new XYDataSet(years, values);
+
+										double smallestYear = years.Min();
+										double smallestValue = values.Min();
+
+										//var yearsReg = new List<double>();
+										//var valuesReg = new List<double>();
+
+										var y = new List<testDataTemplate>();
+
+										const double reg = 2000;
+
+										for (int i = 0; i < years.Count; i++)
+										{
+											y.Add(new testDataTemplate
+											{
+												year = (smallestYear + i).ToString(), //fine
+												value = smallestValue + (i*reg)
+											});
+
+											//yearsReg.Add(smallestYear + i);
+											//valuesReg.Add(smallestValue + (smallestYear + i)*reg);
+										}
+
+										ShowChartReg(y);
 
 
-									//OutputGrid.Visibility = Visibility.Visible;
+										//OutputGrid.Visibility = Visibility.Visible;
 
-									//Output.Text = "Slope: " + Math.Round(ds.Slope, 2) + "\n";
-									//Output.Text += "YIntercept: " + Math.Round(ds.YIntercept, 2) + "\n";
-									//Output.Text += "Rsquared: " + Math.Round(ds.ComputeRSquared(), 3) + "\n";
-								}
-								break;
-								}
-						break;
+										//Output.Text = "Slope: " + Math.Round(ds.Slope, 2) + "\n";
+										//Output.Text += "YIntercept: " + Math.Round(ds.YIntercept, 2) + "\n";
+										//Output.Text += "Rsquared: " + Math.Round(ds.ComputeRSquared(), 3) + "\n";
+									}
+									break;
+							}
+							break;
+					}
+
 				}
-
-				
-			}
+				catch (Exception)
+				{
+					
+				}
+			 }
 
 		}
 
 	    private void ClearGraph()
 	    {
+		    Output.Text = "";
 			(MainChart1.Series[0] as AreaSeries).ItemsSource = null;
 			(MainChart1.Series[1] as BarSeries).ItemsSource = null;
 			(MainChart1.Series[2] as BubbleSeries).ItemsSource = null;
