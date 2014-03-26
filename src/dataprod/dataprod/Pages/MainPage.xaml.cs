@@ -129,9 +129,75 @@ namespace dataprod
 
 										if (commands[1] == "all")
 										{
-												
+											var socs = new List<double>
+											{
+												2136,
+												2213,
+												2413,
+												2311,
+												2213,
+												2451,
+												4162,
+												4216,
+												3131,
+												3213,
+												8212,
+												1190,
+												1225,
+												1241,
+												1251,
+												2111
+
+
+											};
+
+											var regressionsToPlot = new List<testDataTemplate>();
+
+											foreach (var soc in socs) //waaa, this code is so un-refactored.
+											{
+												var y = await dataGrabber.LMI.wfpredict(soc.ToString(), "2013", "2020");
+												var d = y.predictedEmployment.Select(
+														data => new testDataTemplate { year = data.year.ToString(), value = data.employment }).ToList();
+
+												var years = d.Select(year => Convert.ToDouble(year.year)).ToList();
+												var values = d.Select(year => Convert.ToDouble(year.value)).ToList();
+												var ds = new XYDataSet(years, values);
+
+												double smallestYear = years.Min();
+												double smallestValue = values.Min();
+
+												for (int i = 0; i < years.Count; i++) //normalise
+												{
+													years[i] -= smallestYear;
+												}
+												for (int i = 0; i < values.Count; i++)
+												{
+													values[i] -= smallestValue;
+												}
+												OutputGrid.Visibility = Visibility.Visible;
+
+												var gradient = ds.ComputeRSquared();
+
+												var deviation = d.Select(data => data.value - (Convert.ToDouble(data.year) * (gradient))).ToList();
+
+												double deviationAverage = deviation.Sum();
+
+												deviationAverage = deviationAverage / deviation.Count;
+
+												regressionsToPlot.Add(new testDataTemplate
+												{
+													year = soc.ToString(), //crap names is for graphing stuff, needs recode
+													value = deviationAverage
+												});
+
+												ShowChart("column", regressionsToPlot);
+											}
+											regressionsToPlot = regressionsToPlot.OrderBy(x => x.value).ToList();
+											ShowChart("column", regressionsToPlot);
+
+
 										}
-										else
+										else //do all
 										{
 											var d = await GetYearEmploymentDataSmart(commands);
 
@@ -152,21 +218,11 @@ namespace dataprod
 											}
 											OutputGrid.Visibility = Visibility.Visible;
 
-											var deviation = new List<double>();
-
 											var gradient = ds.ComputeRSquared();
 
-											foreach (var data in d)
-											{
-												deviation.Add(data.value - (Convert.ToDouble(data.year)*(gradient)));
-											}
+											var deviation = d.Select(data => data.value - (Convert.ToDouble(data.year)*(gradient))).ToList();
 
-											double deviationAverage = 0.00;
-
-											foreach (var d1 in deviation)
-											{
-												deviationAverage += d1;
-											}
+											double deviationAverage = deviation.Sum();
 
 											deviationAverage = deviationAverage/deviation.Count;
 
