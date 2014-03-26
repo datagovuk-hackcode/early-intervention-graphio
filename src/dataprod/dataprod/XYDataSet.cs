@@ -1,25 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.Collections;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using CommonLib.Geometry;
+
+#endregion
 
 namespace CommonLib.Numerical
 {
 	public class XYDataSet : IList<PointD>
 	{
+		private readonly List<PointD> _internalList = new List<PointD>();
+		private double _maxX = Double.NegativeInfinity;
+		private double _maxY = Double.NegativeInfinity;
+		private double _minX = Double.PositiveInfinity;
+		private double _minY = Double.PositiveInfinity;
 
-		private List<PointD> _internalList = new List<PointD>();
-
-		public XYDataSet() : this(null, null) { }
+		public XYDataSet() : this(null, null)
+		{
+		}
 
 		public XYDataSet(IEnumerable<PointD> points)
 		{
 			ResetValues();
 
-			foreach (var point in points)
+			foreach (PointD point in points)
 				Add(point);
 		}
 
@@ -37,26 +44,41 @@ namespace CommonLib.Numerical
 			}
 		}
 
-		public int Count { get { return _internalList.Count; } }
+		public double XMax
+		{
+			get { return _internalList[XMaxIndex].X; }
+		}
 
-		public bool IsReadOnly { get { return false; } }
+		public double XMin
+		{
+			get { return _internalList[XMinIndex].X; }
+		}
 
-		private double _maxX = Double.NegativeInfinity;
-		public double XMax { get { return _internalList[XMaxIndex].X; } }
-		private double _minX = Double.PositiveInfinity;
-		public double XMin { get { return _internalList[XMinIndex].X; } }
 		public int XMaxIndex { get; protected set; }
 		public int XMinIndex { get; protected set; }
 
-		private double _maxY = Double.NegativeInfinity;
-		public double YMax { get { return _internalList[YMaxIndex].Y; } }
-		private double _minY = Double.PositiveInfinity;
-		public double YMin { get { return _internalList[YMinIndex].Y; } }
+		public double YMax
+		{
+			get { return _internalList[YMaxIndex].Y; }
+		}
+
+		public double YMin
+		{
+			get { return _internalList[YMinIndex].Y; }
+		}
+
 		public int YMaxIndex { get; protected set; }
 		public int YMinIndex { get; protected set; }
 
-		public double XMean { get { return XSum / Count; } }
-		public double YMean { get { return YSum / Count; } }
+		public double XMean
+		{
+			get { return XSum/Count; }
+		}
+
+		public double YMean
+		{
+			get { return YSum/Count; }
+		}
 
 		public double RSquare { get; protected set; }
 
@@ -70,8 +92,22 @@ namespace CommonLib.Numerical
 		public double XSquaredSum { get; set; }
 		public double XYProductSum { get; set; }
 
-		public double XIntercept { get { return -YIntercept / Slope; } }
+		public double XIntercept
+		{
+			get { return -YIntercept/Slope; }
+		}
+
 		public double YIntercept { get; protected set; }
+
+		public int Count
+		{
+			get { return _internalList.Count; }
+		}
+
+		public bool IsReadOnly
+		{
+			get { return false; }
+		}
 
 
 		public PointD this[int index]
@@ -79,8 +115,8 @@ namespace CommonLib.Numerical
 			get { return _internalList[index]; }
 			set
 			{
-				var p = value;
-				var old = _internalList[index];
+				PointD p = value;
+				PointD old = _internalList[index];
 				_internalList[index] = p;
 
 				ComputeSums(old, SumMode.Subtract);
@@ -88,11 +124,6 @@ namespace CommonLib.Numerical
 				ComputeMinAndMax();
 				ComputeSlopeAndYIntercept();
 			}
-		}
-
-		public void Add(double x, double y)
-		{
-			Add(new PointD(x, y));
 		}
 
 		public void Add(PointD p)
@@ -109,26 +140,6 @@ namespace CommonLib.Numerical
 		{
 			_internalList.Clear();
 			ResetValues();
-		}
-
-		public void ComputeSlopeAndYIntercept()
-		{
-			double delta = Count * XSquaredSum - Math.Pow(XSum, 2.0);
-			YIntercept = (1.0 / delta) * (XSquaredSum * YSum - XSum * XYProductSum);
-			Slope = (1.0 / delta) * (Count * XYProductSum - XSum * YSum);
-
-			RegressionPoint0.X = XMin;
-			RegressionPoint0.Y = Slope * XMin + YIntercept;
-			RegressionPointN.X = XMax;
-			RegressionPointN.Y = Slope * XMax + YIntercept;
-		}
-
-		public double ComputeRSquared()
-		{
-			var SStot = _internalList.Sum(p => Math.Pow(p.Y - YMean, 2.0));
-			var SSerr = _internalList.Sum(p => Math.Pow(p.Y - (Slope * p.X + YIntercept), 2.0));
-			RSquare = 1.0 - SSerr / SStot;
-			return RSquare;
 		}
 
 		public bool Contains(PointD p)
@@ -168,7 +179,7 @@ namespace CommonLib.Numerical
 
 		public bool Remove(PointD p)
 		{
-			var success = _internalList.Remove(p);
+			bool success = _internalList.Remove(p);
 			if (success)
 			{
 				RSquare = double.NaN;
@@ -181,7 +192,7 @@ namespace CommonLib.Numerical
 
 		public void RemoveAt(int index)
 		{
-			var old = _internalList[index];
+			PointD old = _internalList[index];
 			_internalList.RemoveAt(index);
 			RSquare = double.NaN;
 
@@ -190,8 +201,34 @@ namespace CommonLib.Numerical
 			ComputeSlopeAndYIntercept();
 		}
 
+		public void Add(double x, double y)
+		{
+			Add(new PointD(x, y));
+		}
+
+		public void ComputeSlopeAndYIntercept()
+		{
+			double delta = Count*XSquaredSum - Math.Pow(XSum, 2.0);
+			YIntercept = (1.0/delta)*(XSquaredSum*YSum - XSum*XYProductSum);
+			Slope = (1.0/delta)*(Count*XYProductSum - XSum*YSum);
+
+			RegressionPoint0.X = XMin;
+			RegressionPoint0.Y = Slope*XMin + YIntercept;
+			RegressionPointN.X = XMax;
+			RegressionPointN.Y = Slope*XMax + YIntercept;
+		}
+
+		public double ComputeRSquared()
+		{
+			double SStot = _internalList.Sum(p => Math.Pow(p.Y - YMean, 2.0));
+			double SSerr = _internalList.Sum(p => Math.Pow(p.Y - (Slope*p.X + YIntercept), 2.0));
+			RSquare = 1.0 - SSerr/SStot;
+			return RSquare;
+		}
+
 		protected void ComputeMinAndMax()
-		{ //methods that call this, Insert, 
+		{
+			//methods that call this, Insert, 
 			ResetMinAndMax();
 
 			for (int i = 0; i < _internalList.Count; ++i)
@@ -225,7 +262,6 @@ namespace CommonLib.Numerical
 			}
 		}
 
-		protected enum SumMode { Add, Subtract };
 		protected void ComputeSums(PointD p, SumMode mode)
 		{
 			if (mode == SumMode.Add)
@@ -233,14 +269,14 @@ namespace CommonLib.Numerical
 				XSum += p.X;
 				YSum += p.Y;
 				XSquaredSum += Math.Pow(p.X, 2.0);
-				XYProductSum += (p.X * p.Y);
+				XYProductSum += (p.X*p.Y);
 			}
 			else if (mode == SumMode.Subtract)
 			{
 				XSum -= p.X;
 				YSum -= p.Y;
 				XSquaredSum -= Math.Pow(p.X, 2.0);
-				XYProductSum -= (p.X * p.Y);
+				XYProductSum -= (p.X*p.Y);
 			}
 		}
 
@@ -275,5 +311,10 @@ namespace CommonLib.Numerical
 			YMinIndex = -1;
 		}
 
+		protected enum SumMode
+		{
+			Add,
+			Subtract
+		};
 	}
 }

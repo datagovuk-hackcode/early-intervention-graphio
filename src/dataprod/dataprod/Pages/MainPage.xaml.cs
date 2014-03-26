@@ -1,27 +1,20 @@
-﻿using System;
+﻿#region
+
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Xml.Linq;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Graphics.Imaging;
-using Windows.Storage.Search;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 using Bing.Maps;
 using CommonLib.Numerical;
 using WinRTXamlToolkit.Controls.DataVisualization.Charting;
+
+#endregion
 
 namespace dataprod
 {
