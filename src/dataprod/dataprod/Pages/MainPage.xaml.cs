@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -148,6 +147,13 @@ namespace dataprod
 
 
 						Debug.WriteLine(await dataGrabber.LMI.essRegionJason(1, "2136"));
+						break;
+					case "analyse": //check degree from the normal
+						switch (commands[2])
+						{
+							case "regression" :
+								break;
+						}
 						break;
 					//case "analyse":
 					//	var year = commands[1];

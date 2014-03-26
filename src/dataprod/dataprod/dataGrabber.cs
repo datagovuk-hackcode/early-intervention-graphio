@@ -61,7 +61,7 @@ namespace dataprod
 				var url = "http://unitcost.toastwaffle.com/api/";
 				var y = await HttpGet(url);
 				var z = JsonConvert.DeserializeObject<jsonTemplates.ToastWaffle>(y);
-				return z;
+				return z; //untested
 			} 
 		}
 		private static async Task<string> HttpGet(string urlIn)
